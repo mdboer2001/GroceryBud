@@ -34,7 +34,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <?php if(isset($username)) { echo "Welkom: " , $username; }else{ echo "Klant";} ?>
+          <?php if(isset($username)) { echo "Welkom " , $username; }else{ echo "Klant";} ?>
 
           <?php/* if(isset($username)) { echo $username; }else{ echo "Klant";} */?>
           <div class="dropdown">
