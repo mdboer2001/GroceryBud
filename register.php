@@ -44,6 +44,6 @@ if ($_POST) {
                 <br>
                 <a href="forgotusername.php">Gebruikersnaam vergeten?</a><br>
                 <a href="forgotpassword.php">Wachtwoord vergeten?</a><br><br>
-                <a href="index.php" class="register">Heb je al een account? Log hier in.</a>
+                <a href="login.php" class="register">Heb je al een account? Log hier in.</a>
             </body>
 </html>
