@@ -12,13 +12,13 @@
                 <p class="welkom">Gebruikersnaam vergeten?</p>
 
                 <!--Naam-->
-                <div class="txt">
+                <div class="txt" id="user">
                     <i class="fas fa-user icon"></i>
                     <input type="text" name="name" placeholder="E-mail" require>
                 </div>
 
                 <!--Bericht-->
-                <input type="submit" class="verder" value="Verder">
+                <input type="submit" class="bttn" value="Verder">
                 <br><br>
                 <a href="forgotpassword.php">Wachtwoord vergeten?</a><br>
                 <a href="login.php">Login</a><br>

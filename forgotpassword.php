@@ -8,7 +8,7 @@
         <form class="formulier" name="formulier" method="post">
 
             <div class="contact">
-                <img src="img/logo.png" style="width: 300px;" class="logo">
+                <img src="img/logo.png" style="width: 400px;" class="logo">
                 <p class="welkom">Wachtwoord vergeten?</p>
 
                 <!--Naam-->
@@ -29,7 +29,7 @@
                 </div>
 
                 <!--Bericht-->
-                <input type="submit" class="verder" value="Verder">
+                <input type="submit" class="bttn" value="Verder">
                 <br><br>
                 <a href="forgotusername.php">Gebruikersnaam vergeten?</a><br>
                 <a href="login.php">Login</a><br>

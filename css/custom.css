@@ -27,10 +27,9 @@ a:hover{
 }
 
 .txt {
-    border: 1px solid black;
+    border: 1px solid #707070;
     margin: 8px 0;
     padding: 12px 18px;
-    border-left: 6px solid #77ec3d;
   }
 
   .txt label {
@@ -43,6 +42,7 @@ a:hover{
 
   .txt input,
   .txt textarea {
+    font-family: “Segoe UI”;
     width: 98%;
     border: none;
     background: none;
@@ -55,7 +55,8 @@ a:hover{
 
   .bttn {
     display: block;
-    background: #77ec3d;
+    background: white;
+    border: 1px solid #707070;
     padding: 14px 0;
     color: black;
     text-transform: uppercase;
@@ -77,6 +78,10 @@ a:hover{
     background-color: white;
   }
 
+  #user{
+    margin-top: 29.95%;
+    background-color: white;
+  }
   form {
     background-color: white;
   }
@@ -118,13 +123,6 @@ a:hover{
 
   .logo{
       margin-left: 12%;
-  }
-
-  .verder{
-      margin-left: 27%;
-      width: 250px;
-      height: 30px;
-      background: #77ec3d;
   }
   /* de div van profile.php */
   .profile{
