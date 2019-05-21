@@ -64,20 +64,20 @@ a:hover{
 
   .contact {
     margin-left: 0%;
-    margin-top: -35%;
+    margin-top: -30%;
     background-color: white;
   }
 
   #reg {
-    margin-left: 0%;
     margin-top: -35.95%;
-    background-color: white;
   }
 
   #user{
-    margin-left: 0%;
+    margin-top: -25.95%;
+  }
+
+  #pass{
     margin-top: -30.95%;
-    background-color: white;
   }
   form {
     background-color: white;
