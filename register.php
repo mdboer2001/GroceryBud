@@ -38,20 +38,6 @@ if ($_POST) {
                     <input type="text" name="naam" placeholder="Naam *" required>
                 </div>
 
-                <div class="txt">
-                    <input type="text" name="adres" placeholder="Adres">
-                </div>
-                <div class="txt">
-                    <input type="text" name="woonplaats" placeholder="Woonplaats">
-                </div>
-                <div class="txt">
-                    <input type="text" name="tel" placeholder="Telefoonnummer">
-                </div>
-                <div class="txt">
-                    <input type="date" name="geboortedatum" placeholder="Geboortedatum *" min="1930-01-01" max="2050-01-01" required>
-                </div>
-                <br>
-                <p><i>* = Verplicht veld.</i></p>
 
                 <!--Bericht-->
                 <input type="submit" class="bttn" id="buttn" value="Maak je account aan.">
