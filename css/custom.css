@@ -12,12 +12,20 @@ body{
     font-size: 100%;
 }
 
+a{
+  font-family: “Segoe UI”;
+  text-decoration: none;
+  color: #2d6ebb;
+}
+
+a:hover{
+  color: black;
+}
 
 .txt {
     border: 1px solid black;
     margin: 8px 0;
     padding: 12px 18px;
-    border-radius: 8px;
     border-left: 6px solid #77ec3d;
   }
 
@@ -61,7 +69,7 @@ body{
 
   #reg {
     margin-left: 0%;
-    margin-top: -37.5%;
+    margin-top: -35.95%;
     background-color: white;
   }
 
@@ -89,10 +97,6 @@ body{
       color: #707070;
   }
 
-  a{
-      text-decoration: none;
-  }
-
   .register{
       text-decoration: underline;
   }
@@ -109,7 +113,7 @@ body{
   }
 
   .logo{
-      margin-left: 22%;
+      margin-left: 12%;
   }
 
   .verder{
