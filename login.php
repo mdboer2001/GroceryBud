@@ -26,18 +26,18 @@ if (isset($_POST) && isset($_POST["email"])) {
 
             <div class="contact">
                 <img src="img/logo.png" style="width: 400px;" class="logo">
-                <h1 class="welkom">Welkom</h1>
+                <p class="welkom">Welkom</p>
 
 
                 <!--Naam-->
                 <div class="txt">
-                    <i class="fas fa-user icon"></i>
+                    <i class="fas fa-user icon" style="color: #707070"></i>
                     <input type="text" name="email" placeholder="Email" require>
                 </div>
 
                 <!--Email-->
                 <div class="txt">
-                    <i class="fas fa-key icon"></i>
+                    <i class="fas fa-key icon" style="color: #707070"></i>
                     <input type="password" name="pass" placeholder="Wachtwoord" require>
                 </div>
 
