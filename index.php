@@ -25,17 +25,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <ul class="navbar-nav mr-auto">
 
         </ul>
-        
+
           <?php/* if(isset($username)) { echo $username; }else{ echo "Klant";} */?>
           <div class="dropdown">
-            <a href="#"><img src="img/usr/user.png" class="user_pic"></a>
-            <div class="dropdown-content">
-              <a href="#">Persoonlijke informatie</a>
-              <a href="#">Wachtwoord veranderen</a>
-              <a href="#">Log uit</a>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="#"><img src="img/usr/user.png" class="user_pic"></a>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Persoonlijke informatie</a>
+              <a class="dropdown-item" href="#">Wachtwoord veranderen</a>
+              <a class="dropdown-item" href="#">Log uit</a>
             </div>
           </div>
-      
+
       </div>
     </nav>
 

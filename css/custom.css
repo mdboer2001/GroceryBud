@@ -188,3 +188,17 @@ a:hover{
       left: 0;
       bottom: 0;
   }
+
+  .logonavbar{
+    width: 400px;
+    padding: 4px 4px;
+  }
+
+  .user_pic{
+    width: 60px;
+    height: 60px;
+  }
+
+  .dropdown-menu, .dropdown-item{
+    z-index: 99;
+  }
