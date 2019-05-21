@@ -21,7 +21,7 @@ if ($_POST) {
     <body>
         <form class="formulier" name="formulier" action="register.php" method="post">
 
-            <div class="contact">
+            <div class="contact" id="reg">
                 <img src="img/logo.png" style="width: 300px;" class="logo">
                 <p class="welkom">Maak hier een account aan.</p>
 
@@ -48,7 +48,7 @@ if ($_POST) {
                     <input type="text" name="tel" placeholder="Telefoonnummer">
                 </div>
                 <div class="txt">
-                    <input type="date" name="geboortedatum" placeholder="Geboortedatum *" required>
+                    <input type="date" name="geboortedatum" placeholder="Geboortedatum *" min="1930-01-01" max="2050-01-01" required>
                 </div>
                 <br>
                 <p><i>* = Verplicht veld.</i></p>
