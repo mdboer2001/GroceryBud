@@ -30,9 +30,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <?php if(isset($username)) { echo $username; }else{ echo "Klant";} ?>
-          <a href="img/usr/user.png"><img src="img/usr/user.png" class="user_pic"/></a>
 
-        </form>
+          <?php/* if(isset($username)) { echo $username; }else{ echo "Klant";} */?>
+          <div class="dropdown">
+            <a href="#"><img src="img/usr/user.png" class="user_pic"></a>
+            <div class="dropdown-content">
+              <a href="#">Persoonlijke informatie</a>
+              <a href="#">Wachtwoord veranderen</a>
+              <a href="#">Log uit</a>
+            </div>
+          </div>
+
       </div>
     </nav>
 
