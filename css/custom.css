@@ -79,7 +79,7 @@ a:hover{
     margin-top: -30.95%;
     background-color: white;
   }
-  
+
   form {
     background-color: white;
   }
@@ -135,7 +135,7 @@ a:hover{
   /* logo in profile.php */
   .profile img{
       position: absolute;
-      top: 30px;
+      top: 28px;
       left: 12%;
   }
   /* form profile.php */
