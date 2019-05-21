@@ -35,6 +35,40 @@ if (isset($_POST) && isset($_POST["email"])) {
 </head>
 <body style="background: linear-gradient(to right, red, yellow, lime, cyan, blue)">
   <?php if (!isset($_SESSION["user"])): ?>
+    <form class="formulier" name="formulier" action="connect.php" method="post">
+
+                            <div class="contact">
+                                <h2 style="margin-left: -125px;"><i> Neem contact met mij op!</i></h2>
+
+                                <!--Naam-->
+                                <div class="txt">
+                                    <label>Naam: *</label>
+                                    <input type="text" name="name" placeholder="Vul uw naam in" require>
+                                </div>
+
+                                <!--Email-->
+                                <div class="txt">
+                                    <label>Email: *</label>
+                                    <input type="email" name="email" placeholder="Vul uw Email in" require>
+                                </div>
+
+                                <!--Bericht-->
+                                <div class="txt">
+                                    <label>Bericht: *</label>
+                                    <textarea name="question" placeholder="Vul hier uw vraag/opmerking in." require></textarea>
+                                </div>
+                                <p style="margin-left: -400px;"><i>* = Verplicht veld</i></p>
+
+                                <input type="submit" class="bttn" id="buttn" onclick="confirm()"></submit>
+                                <script>
+                                        function confirm() {
+                                        alert("Uw opmerking of vraag is succesvol verzonden.");
+                                        }
+                                </script>
+
+                            </div>
+                        </form>
+
   <form action="login.php" method="post">
     <label>
       email
