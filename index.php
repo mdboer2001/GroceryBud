@@ -45,10 +45,22 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
               <a href="logout.php">Log uit</a>
             </div>
           </div>
-
       </div>
     </nav>
-
+    <div class="row">
+    <div class="col"></div>
+      <div class="col"></div>
+        <div class="col">
+          <div class="winkelmandje">
+            <h1>Boodschappenlijstje</h1>
+              <div class="winkelproduct"></div>
+              <div class="winkelproduct"></div>
+              <div class="winkelproduct"></div>
+              <div class="winkelproduct"></div>
+              <div class="winkelproduct"></div>
+          </div>
+        </div>
+    </div>
 
 
 
