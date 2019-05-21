@@ -5,7 +5,7 @@ if ($_POST) {
   $dbh = new PDO("mysql:host=localhost;dbname=reg", "root", "", [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
   ]);
-  $stmt = $dbh->prepare("INSERT INTO `users` (`email`, `pass`, `naam`) VALUES (?, ?, ?)");
+  $stmt = $dbh->prepare("INSERT INTO `users` (`email`, `pass`, `gbrnaam`, `naam`) VALUES (?, ?, ?)");
   $stmt->execute([$_POST["Email"], $hash, $_POST["Gebruikersnaam"], $_POST["Wachtwoord"]]);
 
   header("Location: .");
@@ -28,9 +28,12 @@ if ($_POST) {
                 <div class="txt">
                     <input type="text" name="email" placeholder="Email *" required>
                 </div>
+                <div class="txt">
+                    <input type="text" name="naam" placeholder="Naam *" required>
+                </div>
                 <!-- gebruikersnaam -->
                 <div class="txt">
-                    <input type="text" name="naam" placeholder="Gebruikersnaam *" required>
+                    <input type="text" name="gbrnaam" placeholder="Gebruikersnaam *" required>
                 </div>
                 <!-- wachtwoord -->
                 <div class="txt">
