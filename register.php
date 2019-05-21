@@ -1,12 +1,11 @@
 <?php
-if ($_POST) {
-  $hash = password_hash($_POST["pass"], PASSWORD_BCRYPT);
+require_once('dbconfig.php');
 
-  $dbh = new PDO("mysql:host=localhost;dbname=reg", "root", "", [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-  ]);
-  $stmt = $dbh->prepare("INSERT INTO `users` (`email`, `pass`, `naam`) VALUES (?, ?, ?)");
-  $stmt->execute([$_POST["Email"], $hash, $_POST["Gebruikersnaam"], $_POST["Wachtwoord"]]);
+
+if ($_POST) {
+  $hash = password_hash($_POST["password"], PASSWORD_BCRYPT);
+  $stmt = $dbh->prepare("INSERT INTO `users` (`email`, `password`, `user_naam`) VALUES (?, ?, ?)");
+  $stmt->execute([$_POST["email"], $hash, $_POST["user_naam"]]);
 
   header("Location: .");
 }
@@ -30,11 +29,11 @@ if ($_POST) {
                 </div>
                 <!-- gebruikersnaam -->
                 <div class="txt">
-                    <input type="text" name="naam" placeholder="Gebruikersnaam *" required>
+                    <input type="text" name="user_naam" placeholder="Gebruikersnaam *" required>
                 </div>
                 <!-- wachtwoord -->
                 <div class="txt">
-                    <input type="password" name="pass" placeholder="Wachtwoord *" required>
+                    <input type="password" name="password" placeholder="Wachtwoord *" required>
                 </div>
 
 
