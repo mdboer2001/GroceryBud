@@ -21,7 +21,7 @@
                 <input type="submit" class="verder" value="Verder">
                 <br><br>
                 <a href="forgotpassword.php">Wachtwoord vergeten?</a><br>
-                <a href="index.php">Login</a><br>
+                <a href="login.php">Login</a><br>
 
             </body>
 </html>
