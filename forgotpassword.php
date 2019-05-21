@@ -14,18 +14,18 @@
                 <!--Naam-->
                 <div class="txt">
                     <i class="fas fa-user icon"></i>
-                    <input type="text" name="name" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Gebruikersnaam of email" require>
+                    <input type="text" name="name" placeholder="Gebruikersnaam of email" require>
                 </div>
 
                 <!--Email-->
                 <div class="txt">
                     <i class="fas fa-key icon"></i>
-                    <input type="password" name="email" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Nieuw wachtwoord" require>
+                    <input type="password" name="email" placeholder="Nieuw wachtwoord" require>
                 </div>
 
                 <div class="txt">
                     <i class="fas fa-key icon"></i>
-                    <input type="password" name="email" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Bevestig nieuw wachtwoord" require>
+                    <input type="password" name="email" placeholder="Bevestig nieuw wachtwoord" require>
                 </div>
 
                 <!--Bericht-->
