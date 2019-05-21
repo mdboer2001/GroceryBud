@@ -5,8 +5,8 @@ if ($_POST) {
   $dbh = new PDO("mysql:host=localhost;dbname=reg", "root", "", [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
   ]);
-  $stmt = $dbh->prepare("INSERT INTO `user` (`email`, `pass`, `naam`, `adres`, `woonplaats`, `tel`, `geboortedatum`) VALUES (?, ?, ?, ?, ?, ?, ?)");
-  $stmt->execute([$_POST["email"], $hash, $_POST["naam"], $_POST["adres"], $_POST["woonplaats"], $_POST["tel"], $_POST["geboortedatum"]]);
+  $stmt = $dbh->prepare("INSERT INTO `users` (`email`, `pass`, `naam`) VALUES (?, ?, ?)");
+  $stmt->execute([$_POST["Email"], $hash, $_POST["Gebruikersnaam"], $_POST["Wachtwoord"]]);
 
   header("Location: .");
 }
@@ -24,19 +24,19 @@ if ($_POST) {
             <div class="contact" id="reg">
                 <img src="img/logo.png" style="width: 400px;" class="logo">
                 <p class="welkom">Maak hier een account aan.</p>
-
-                <!--Naam-->
+                <!-- email -->
                 <div class="txt">
                     <input type="text" name="email" placeholder="Email *" required>
                 </div>
-
-                <!--Email-->
+                <!-- gebruikersnaam -->
+                <div class="txt">
+                    <input type="text" name="naam" placeholder="Gebruikersnaam *" required>
+                </div>
+                <!-- wachtwoord -->
                 <div class="txt">
                     <input type="password" name="pass" placeholder="Wachtwoord *" required>
                 </div>
-                <div class="txt">
-                    <input type="text" name="naam" placeholder="Naam *" required>
-                </div>
+
 
 
                 <!--Bericht-->
