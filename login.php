@@ -1,18 +1,24 @@
 <?php
+require_once('dbconfig.php');
 session_start();
-
-if (isset($_POST) && isset($_POST["email"])) {
-  $dbh = new PDO("mysql:host=localhost;dbname=reg", "root", "", [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-  ]);
-  $stmt = $dbh->prepare("SELECT * FROM `user` WHERE `email` = ?");
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: index.php");
+    exit;
+  }
+if(isset($_POST["email"])) {
+  $stmt = $dbh->prepare("SELECT * FROM `users` WHERE `email` = ?");
   $stmt->execute([$_POST["email"]]);
 
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  if (password_verify($_POST["pass"], $user["pass"])) {
-    $_SESSION["user"] = $user;
+
+if (isset($_POST["pass"])) {
+  if (password_verify($_POST["pass"], $user["password"])) {
+    $_SESSION["user"] = $user["user_naam"];
+    $_SESSION["loggedin"] = true;
+    header("location: index.php");
   }
+}
 }
 ?>
 <!DOCTYPE html>
@@ -22,7 +28,7 @@ if (isset($_POST) && isset($_POST["email"])) {
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     </head>
     <body>
-        <form class="formulier" name="formulier" action="index.php" method="post">
+        <form class="formulier" name="formulier" method="post">
 
             <div class="contact">
                 <img src="img/logo.png" style="width: 400px;" class="logo">

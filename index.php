@@ -1,9 +1,12 @@
 <?php
 session_start();
+require_once("dbconfig.php");
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
   }
+
+  $username = $_SESSION["user"];
 ?>
 
 
