@@ -22,6 +22,7 @@
                 <br><br>
                 <a href="forgotpassword.php">Wachtwoord vergeten?</a><br>
                 <a href="login.php">Login</a><br>
+              </form>
 
             </body>
 </html>

@@ -25,7 +25,7 @@
         <form class="form-inline my-2 my-lg-0">
           <?php if(isset($username)) { echo $username; }else{ echo "Klant";} ?>
           <a href="img/usr/user.png"><img src="img/usr/user.png" class="user_pic"/></a>
-          
+
         </form>
       </div>
     </nav>
