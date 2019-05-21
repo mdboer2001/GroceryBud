@@ -13,7 +13,7 @@
 
                 <!--Naam-->
                 <div class="txt">
-                    <i class="fas fa-user icon"></i>
+                    <i class="fas fa-user icon" style="color: #707070"></i>
                     <input type="text" name="name" placeholder="E-mail" require>
                 </div>
 
