@@ -14,7 +14,7 @@ if (isset($_POST) && isset($_POST["email"])) {
     $_SESSION["user"] = $user;
   }
 }
-?>
+?> 
 <!DOCTYPE html>
 <html>
     <head>
