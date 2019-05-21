@@ -22,7 +22,7 @@ if ($_POST) {
         <form class="formulier" name="formulier" action="register.php" method="post">
 
             <div class="contact">
-                <img src="logo.png" style="width: 300px;" class="logo">
+                <img src="img/logo.png" style="width: 300px;" class="logo">
                 <p class="welkom">Maak hier een account aan.</p>
 
                 <!--Naam-->
