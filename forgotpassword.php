@@ -7,7 +7,7 @@
     <body>
         <form class="formulier" name="formulier" method="post">
 
-            <div class="contact">
+            <div class="contact" id="pass">
                 <img src="img/logo.png" style="width: 400px;" class="logo">
                 <p class="welkom">Wachtwoord vergeten?</p>
 

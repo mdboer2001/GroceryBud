@@ -1,7 +1,62 @@
-.user_pic {
-  height: 10px;
+@font-face {
+  font-family: "Segoe UI";
+  src: url("Segoe UI.woff");
 }
 
+
+.user_pic:hover{
+
+}
+
+/* Dropdown Button */
+.user_pic {
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  height: 80px;
+  width: 80px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 1px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  right: 10%;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+
+.logonavbar{
+  width: 20%;
+  height: 20%;
+}
 body{
     background-image: url("../img/grocerybg.jpg");
     background-repeat: no-repeat;
@@ -64,20 +119,20 @@ a:hover{
 
   .contact {
     margin-left: 0%;
-    margin-top: -35%;
+    margin-top: -30%;
     background-color: white;
   }
 
   #reg {
-    margin-left: 0%;
     margin-top: -35.95%;
-    background-color: white;
   }
 
   #user{
-    margin-left: 0%;
+    margin-top: -25.95%;
+  }
+
+  #pass{
     margin-top: -30.95%;
-    background-color: white;
   }
   form {
     background-color: white;
@@ -134,16 +189,17 @@ a:hover{
   /* logo in profile.php */
   .profile img{
       position: absolute;
-      top: 50px;
+      top: 30px;
+      left: 12%;
   }
   /* form profile.php */
   #accinfo{
       border: 1px solid #707070;
       position: absolute;
       height: 50%;
-      width: 70%;
+      width: 60%;
       top: 25%;
-      left: 15%;
+      left: 20%;
   }
   #accinfo legend{
       font-size: 26px;
@@ -152,10 +208,20 @@ a:hover{
       left: 3%;
       top: 5%;
   }
+  .accdata{
+      position: relative;
+      background-color: white;
+      border-bottom: 1px solid #707070;
+      height: 15%;
+      width: 95%;
+      left: 5%;
+      top: 30%;
+      font-size: 18px;
+  }
   .profilepic{
       position: absolute;
       top: 5%;
-      right: 5%;
+      right: 3%;
       height: 60px;
       width: 60px;
       border-radius: 50%;
