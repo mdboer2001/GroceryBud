@@ -136,7 +136,6 @@ body{
       width: 70%;
       height: 50%;
       border: 1px solid #707070;
-      border-radius: 20px;
       top: 25%;
       left: 15%;
   }
@@ -163,4 +162,12 @@ body{
       right: 16%;
       font-size: 26px;
       color: #77ec3d;
+  }
+  .green{
+      background-color: #77EC3D;
+      position: absolute;
+      height: 50px;
+      width: 100%;
+      left: 0;
+      bottom: 0;
   }
