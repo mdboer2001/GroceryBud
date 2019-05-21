@@ -37,7 +37,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <div class="dropdown-content">
               <a href="#">Persoonlijke informatie</a>
               <a href="#">Wachtwoord veranderen</a>
-              <a href="#">Log uit</a>
+              <a href="logout.php">Log uit</a>
             </div>
           </div>
 
