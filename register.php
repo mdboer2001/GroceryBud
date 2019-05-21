@@ -7,7 +7,7 @@ if ($_POST) {
   $stmt = $dbh->prepare("INSERT INTO `users` (`email`, `password`, `user_naam`) VALUES (?, ?, ?)");
   $stmt->execute([$_POST["email"], $hash, $_POST["user_naam"]]);
 
-  header("Location: .");
+  header("Location: login.php");
 }
 ?>
 
@@ -30,10 +30,6 @@ if ($_POST) {
                 <!-- naam -->
                 <div class="txt">
                     <input type="text" name="user_naam" placeholder="Naam *" required>
-                </div>
-                <!-- gbrnaam -->
-                <div class="txt">
-                    <input type="text" name="gbrnaam" placeholder="Gebruikersnaam *" required>
                 </div>
                 <!-- wachtwoord -->
                 <div class="txt">
