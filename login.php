@@ -26,7 +26,6 @@ if (isset($_POST) && isset($_POST["email"])) {
 
             <div class="contact">
                 <img src="img/logo.png" style="width: 300px;" class="logo">
-                <p class="welkom">Welkom <?php echo $_SESSION["user"]["naam"]; ?></p>
 
 
                 <!--Naam-->
