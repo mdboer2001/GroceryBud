@@ -11,9 +11,9 @@
       <form class="accinfo">
         <legend>Profiel</legend>
         <div class="profilepic"></div>
-
       </form>
       <a class="terug" href="index.php">Terug</a>
+      <div class="green"></div>
     </div>
   </body>
 </html>
