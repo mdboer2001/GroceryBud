@@ -26,6 +26,7 @@ if (isset($_POST) && isset($_POST["email"])) {
 
             <div class="contact">
                 <img src="img/logo.png" style="width: 300px;" class="logo">
+                <p class="welkom">Welkom</p>
 
 
                 <!--Naam-->
@@ -46,5 +47,6 @@ if (isset($_POST) && isset($_POST["email"])) {
                 <a href="forgotusername.php">Gebruikersnaam vergeten?</a><br>
                 <a href="forgotpassword.php">Wachtwoord vergeten?</a><br><br>
                 <a href="register.php" class="register">Nog geen account? Meld je hier aan.</a>
+            </div>
             </body>
 </html>
