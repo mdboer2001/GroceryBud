@@ -59,7 +59,11 @@ body{
     background-color: white;
   }
 
-
+  #reg {
+    margin-left: 0%;
+    margin-top: -47.5%;
+    background-color: white;
+  }
 
   form {
     background-color: white;
@@ -86,7 +90,7 @@ body{
   }
 
   a{
-    text-decoration: none;
+      text-decoration: none;
   }
 
   .register{
@@ -109,8 +113,62 @@ body{
   }
 
   .verder{
-    margin-left: 27%;
-    width: 250px;
-    height: 30px;
-    background: #77ec3d;
+      margin-left: 27%;
+      width: 250px;
+      height: 30px;
+      background: #77ec3d;
+  }
+  /* de div van profile.php */
+  .profile{
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: white;
+      height: 720px;
+      width: 100%;
+  }
+  /* logo in profile.php */
+  .profile img{
+      position: absolute;
+      top: 50px;
+  }
+  /* form profile.php */
+  #accinfo{
+      border: 1px solid #707070;
+      position: absolute;
+      height: 50%;
+      width: 70%;
+      top: 25%;
+      left: 15%;
+  }
+  #accinfo legend{
+      font-size: 26px;
+      color: #707070;
+      position: absolute;
+      left: 3%;
+      top: 5%;
+  }
+  .profilepic{
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      background-color: red;
+      background-image:url(../img/accpic.jpg);
+  }
+  .terug{
+      position: absolute;
+      top: 600px;
+      font-size: 26px;
+      color: #77ec3d;
+  }
+  .green{
+      background-color: #77EC3D;
+      position: absolute;
+      height: 50px;
+      width: 100%;
+      left: 0;
+      bottom: 0;
   }
