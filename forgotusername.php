@@ -7,13 +7,13 @@
     <body>
         <form class="formulier" name="formulier" method="post">
 
-            <div class="contact">
-                <img src="img/logo.png" style="width: 300px;" class="logo">
+            <div class="contact" id="user">
+                <img src="img/logo.png" style="width: 400px;" class="logo">
                 <p class="welkom">Gebruikersnaam vergeten?</p>
 
                 <!--Naam-->
-                <div class="txt" id="user">
-                    <i class="fas fa-user icon"></i>
+                <div class="txt">
+                    <i class="fas fa-user icon" style="color: #707070"></i>
                     <input type="text" name="name" placeholder="E-mail" require>
                 </div>
 
