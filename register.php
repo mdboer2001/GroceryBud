@@ -28,11 +28,7 @@ if ($_POST) {
                     <input type="text" name="email" placeholder="Email *" required>
                 </div>
                 <div class="txt">
-                    <input type="text" name="naam" placeholder="Naam *" required>
-                </div>
-                <!-- gebruikersnaam -->
-                <div class="txt">
-                    <input type="text" name="user_naam" placeholder="Gebruikersnaam *" required>
+                    <input type="text" name="user_naam" placeholder="Naam *" required>
                 </div>
                 <!-- wachtwoord -->
                 <div class="txt">
