@@ -1,10 +1,10 @@
-<?php
+ /*
  session_start();
  if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
      header("location: login.php");
      exit;
- }
- ?>
+ }*/
+<!DOCTYPE html>
  <html>
   <head>
     <meta charset="utf-8">
@@ -25,6 +25,7 @@
         <form class="form-inline my-2 my-lg-0">
           <?php if(isset($username)) { echo $username; }else{ echo "Klant";} ?>
           <a href="img/usr/user.png"><img src="img/usr/user.png" class="user_pic"/></a>
+
         </form>
       </div>
     </nav>

@@ -32,7 +32,7 @@
                 <input type="submit" class="bttn" value="Verder">
                 <br><br>
                 <a href="forgotusername.php">Gebruikersnaam vergeten?</a><br>
-                <a href="index.php">Login</a><br>
-
+                <a href="login.php">Login</a><br>
+              </form>
             </body>
 </html>
