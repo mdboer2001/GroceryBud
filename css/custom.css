@@ -127,19 +127,18 @@ body{
   /* logo in profile.php */
   .profile img{
       position: absolute;
-      left: -170px;
       top: 50px;
   }
   /* form profile.php */
-  .accinfo{
-      position: absolute;
-      width: 70%;
-      height: 50%;
+  #accinfo{
       border: 1px solid #707070;
+      position: absolute;
+      height: 50%;
+      width: 70%;
       top: 25%;
       left: 15%;
   }
-  .accinfo legend{
+  #accinfo legend{
       font-size: 26px;
       color: #707070;
       position: absolute;
@@ -159,7 +158,6 @@ body{
   .terug{
       position: absolute;
       top: 600px;
-      right: 16%;
       font-size: 26px;
       color: #77ec3d;
   }
