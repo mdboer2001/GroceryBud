@@ -28,7 +28,6 @@
         </form>
         <div class="row">
           <div class="col-8"></div>
-            <div class="col"></div>
               <div class="col">
                 <a class="terug" href="index.php">Terug</a>
               </div>

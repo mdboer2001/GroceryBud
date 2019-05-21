@@ -10,6 +10,7 @@ body{
     background-size: cover;
     font-family: "Segoe UI";
     font-size: 100%;
+    overflow-x: hidden;
 }
 
 
@@ -248,3 +249,25 @@ a:hover{
     width: 400px;
     padding: 4px 4px;
   }
+.winkelmandje{
+    height: 500px;
+    width: 80%;
+    border: 3px solid #707070;
+    border-radius: 0px 0px 10px 10px;
+    background-color: white;
+}
+.winkelmandje h1{
+    text-align: center;
+    border-bottom: 2px solid #707070;
+    font-size: 36px;
+    padding: 10px;
+    color: #707070;
+}
+.winkelproduct{
+    position: relative;
+    left: 15%;
+    height: 8%;
+    width: 70%;
+    font-size: 24px;
+    border-bottom: 1px solid #707070;
+}
