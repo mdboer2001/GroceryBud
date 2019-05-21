@@ -1,5 +1,9 @@
 <?php
  session_start();
+ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+     header("location: login.php");
+     exit;
+ }
  ?>
  <html>
   <head>
@@ -16,11 +20,11 @@
 
       <div class="collapse navbar-collapse" id="navbarColor03">
         <ul class="navbar-nav mr-auto">
-          
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <?php if(isset($username)) { echo $username; }else{ echo "Klant";} ?>
-          <a href="img/usr/user.png"><img src="img/usr/user.png"/></a>
+          <a href="img/usr/user.png"><img src="img/usr/user.png" class="user_pic"/></a>
         </form>
       </div>
     </nav>
