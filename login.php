@@ -26,7 +26,7 @@ if (isset($_POST) && isset($_POST["email"])) {
 
             <div class="contact">
                 <img src="img/logo.png" style="width: 400px;" class="logo">
-                <h1 class="welkom">Welkom</h1>
+                <p class="welkom">Welkom</p>
 
 
                 <!--Naam-->
