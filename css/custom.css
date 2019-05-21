@@ -1,3 +1,112 @@
 .user_pic {
   height: 10px;
 }
+
+body{
+    background-image: url("../img/groente.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.txt {
+    border: 1px solid black;
+    margin: 8px 0;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border-left: 6px solid #77ec3d;
+  }
+
+  .txt label {
+    display: block;
+    text-align: left;
+    color: black;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  .txt input,
+  .txt textarea {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 18px;
+    margin-top: 6px;
+    color: black;
+  }
+
+  .bttn {
+    display: block;
+    background: #77ec3d;
+    padding: 14px 0;
+    color: black;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+
+  .contact {
+    margin-left: 0%;
+    margin-top: -35%;
+    background-color: white;
+  }
+
+
+
+  form {
+    background-color: white;
+  }
+
+  .contact {
+    width: 85%;
+    max-width: 600px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 55%);
+    padding: 30px 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #000000b3;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    color: black;
+  }
+
+  .welkom{
+      text-align: center;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  .register{
+      text-decoration: underline;
+  }
+
+  .icon{
+      height: 5px;
+      width: 5px;
+      padding-left: -50px;
+      padding-top: 8px;
+      background: white;
+      color: black;
+      text-align: center;
+      position: absolute;
+  }
+
+  .logo{
+      margin-left: 22%;
+  }
+
+  .verder{
+    margin-left: 27%;
+    width: 250px;
+    height: 30px;
+    background: #77ec3d;
+  }
