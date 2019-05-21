@@ -9,7 +9,7 @@
   <body>
     <div class="profile">
       <div class="col-5">
-        <img src="img/logo.png" style="width: 300px;" class="logo">
+        <img src="img/logo.png" style="width: 400px;" class="logo">
       </div>
 
       <div class="container">

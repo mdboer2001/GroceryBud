@@ -25,8 +25,8 @@ if (isset($_POST) && isset($_POST["email"])) {
         <form class="formulier" name="formulier" action="index.php" method="post">
 
             <div class="contact">
-                <img src="img/logo.png" style="width: 300px;" class="logo">
-                <p class="welkom">Welkom</p>
+                <img src="img/logo.png" style="width: 400px;" class="logo">
+                <h1 class="welkom">Welkom</h1>
 
 
                 <!--Naam-->
