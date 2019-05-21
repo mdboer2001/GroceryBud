@@ -13,49 +13,51 @@ if ($_POST) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <style>
-    label {
-      display: block;
-    }
-  </style>
-</head>
-<body>
-  <form action="register.php" method="post">
-    <label>
-      email
-      <input type="email" name="email" required>
-    </label>
-    <label>
-      wachtwoord
-      <input type="text" name="pass" required>
-    </label>
-    <label>
-      naam
-      <input type="text" name="naam" required>
-    </label>
-    <label>
-      adres
-      <input type="text" name="adres" required>
-    </label>
-    <label>
-      woonplaats
-      <input type="text" name="woonplaats" required>
-    </label>
-    <label>
-      telefoonnummer
-      <input type="text" name="tel" required>
-    </label>
-    <label>
-      geboortedatum
-      <input type="date" name="geboortedatum" required>
-    </label>
-    <input type="submit" value="verzend">
-  </form>
-</body>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    </head>
+    <body>
+        <form class="formulier" name="formulier" action="register.php" method="post">
+
+            <div class="contact">
+                <img src="img/logo.png" style="width: 300px;" class="logo">
+                <p class="welkom">Maak hier een account aan.</p>
+
+                <!--Naam-->
+                <div class="txt">
+                    <input type="text" name="email" placeholder="Email *" required>
+                </div>
+
+                <!--Email-->
+                <div class="txt">
+                    <input type="password" name="pass" placeholder="Wachtwoord *" required>
+                </div>
+                <div class="txt">
+                    <input type="text" name="naam" placeholder="Naam *" required>
+                </div>
+
+                <div class="txt">
+                    <input type="text" name="adres" placeholder="Adres">
+                </div>
+                <div class="txt">
+                    <input type="text" name="woonplaats" placeholder="Woonplaats">
+                </div>
+                <div class="txt">
+                    <input type="text" name="tel" placeholder="Telefoonnummer">
+                </div>
+                <div class="txt">
+                    <input type="date" name="geboortedatum" placeholder="Geboortedatum *" required>
+                </div>
+                <br>
+                <p><i>* = Verplicht veld.</i></p>
+
+                <!--Bericht-->
+                <input type="submit" class="bttn" id="buttn" value="Maak je account aan.">
+                <br>
+                <a href="forgotusername.php">Gebruikersnaam vergeten?</a><br>
+                <a href="forgotpassword.php">Wachtwoord vergeten?</a><br><br>
+                <a href="index.php" class="register">Heb je al een account? Log hier in.</a>
+            </body>
 </html>
