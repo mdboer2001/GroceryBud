@@ -12,7 +12,7 @@ body{
     font-size: 100%;
     overflow-x: hidden;
 }
-
+    
 .dropdown-content a {
   color: black;
   padding: 12px 14px;
@@ -36,7 +36,6 @@ body{
   width: 20%;
   height: 20%;
 }
-
 
 /* Dropdown Button */
 .user_pic {
@@ -208,7 +207,7 @@ a:hover{
       top: 15%;
   }
   .profile input{
-      padding: 52px;
+      padding: 10px;
   }
   .acc_pic{
       position: absolute;
