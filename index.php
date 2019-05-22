@@ -7,6 +7,26 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   }
 
   $username = $_SESSION["user"];
+
+  if(isset($_GET["winkelkeuze"])) {
+    switch ($_GET["winkelkeuze"]) {
+      case "lidl":
+        $winkel = "lidl";
+        break;
+      case "jumbo":
+        $winkel = "jumbo";
+        break;
+      case "hvliet":
+        $winkel = "hoogvliet";
+        break;
+      default:
+        $winkel = "";
+        break;
+    }
+  } else {
+    $winkel = "";
+  }
+
 ?>
 
 
@@ -16,6 +36,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta charset="utf-8">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/custom.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
     <style media="screen">
       body{
         background: none;
@@ -23,6 +44,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </style>
   </head>
   <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#"><img src="img/logo.png" style="width: 400px;" class="logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,20 +69,31 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           </div>
       </div>
     </nav>
-    <form class="winkel">
-      <select class="winkelkeuze" name="winkelkeuze">
+    <div class="row">
+    <div class="col">
+      <form class="winkel" method="post">
+      <select class="winkelkeuze search-select" name="winkelkeuze" onchange="this.form.submit();">
         <option value="" hidden>Kies uw Supermarkt</option>
-        <option value="appie">Albert Heijn</option>
         <option value="lidl">Lidl</option>
-        <option value="Jumbo">Jumbo</option>
-        <option value="Hvliet">Hoogvliet</option>
+        <option value="jumbo">Jumbo</option>
+        <option value="hvliet">Hoogvliet</option>
       </select>
-      <select class="productkeuze" name="productkeuze">
-        <option value="" hidden>Kies je product</option>
+    <form method="post">
+      <select class="productkeuze search-select" name="productkeuze">
+      <option value="" hidden>Kies je product</option>
+      <?php
+        $sql = "SELECT * FROM ".$winkel.";";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+
+        $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($product as $row) {
+          echo "<option>".$row["pr_naam"]."</option>";
+        }
+       ?>
       </select>
     </form>
-    <div class="row">
-    <div class="col"></div>
+  </div>
       <div class="col"></div>
         <div class="col">
           <div class="winkelmandje">
@@ -75,7 +108,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
 
 
-
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+    <script>
+    $(document).ready(function() {
+    $('.search-select').select2();
+});
+    </script>
   </body>
  </html>

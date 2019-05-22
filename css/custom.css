@@ -13,8 +13,6 @@ body{
     overflow-x: hidden;
 }
 
-
-+/* Links inside the dropdown */
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -264,9 +262,9 @@ a:hover{
 .winkelmandje{
     height: 500px;
     width: 80%;
-    border: 2px solid #707070;
-    border-radius: 0px 0px 10px 10px;
+    border: 1px solid #707070;
     background-color: white;
+    margin-top: 15px;
 }
 .winkelmandje h1{
     text-align: center;
@@ -274,6 +272,7 @@ a:hover{
     font-size: 36px;
     padding: 10px;
     color: #707070;
+    font-weight: normal;
 }
 .winkelproduct{
     position: relative;
