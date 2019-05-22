@@ -27,6 +27,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     $winkel = "";
   }
 
+$sql = "SELECT products FROM users WHERE id = ?";
+$stmt = $dbh->prepare($sql);
+$stmt->bindParam("1", $_SESSION["user_id"]);
+$stmt->execute();
+
+$products = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (isset($_POST["productkeuze"])) {
+  
+}
+
 ?>
 
 
@@ -89,7 +100,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
         $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($product as $row) {
-          echo "<option>".$row["pr_naam"]."</option>";
+          echo "<option value='".$winkel."-".$row['id']."'>".$row["pr_naam"]."</option>";
         }
        ?>
       </select>
