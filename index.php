@@ -81,7 +81,7 @@ if (isset($_POST["productkeuze"])) {
       </div>
     </nav>
     <div class="row">
-    <div class="col">
+    <div id="winkel" class="col">
       <form class="winkel" method="post">
       <select class="winkelkeuze search-select" name="winkelkeuze" onchange="this.form.submit();">
         <option value="" hidden>Kies uw Supermarkt</option>
