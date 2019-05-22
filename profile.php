@@ -22,9 +22,6 @@
             <div class="accdata"><br>
               <p>E-mail</p>
             </div>
-            <div class="accdata"><br>
-              <p>Gebruikersnaam</p>
-            </div>
         </form>
         <div class="row">
           <div class="col-8"></div>
