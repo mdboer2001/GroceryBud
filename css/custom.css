@@ -239,11 +239,12 @@ a:hover{
   }
 .winkelkeuze{
     position: absolute;
-    width: auto;
+    width: 200px;
   }
 .productkeuze{
     position: absolute;
     margin-top: 1.7%;
+    width: 200px;
   }
 .winkelmandje{
     height: 500px;
