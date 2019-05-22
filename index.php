@@ -41,7 +41,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <a href="#"><img src="img/usr/user.png" class="user_pic"></a>
             <div class="dropdown-content">
               <a href="profile.php">Persoonlijke informatie</a>
-              <a href="#">Wachtwoord veranderen</a><br>
+              <a href="forgotpassword.php">Wachtwoord veranderen</a><br>
               <a href="logout.php">Log uit</a>
             </div>
           </div>
