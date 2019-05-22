@@ -32,22 +32,21 @@ $stmt = $dbh->prepare($sql);
 $stmt->bindParam("1", $_SESSION["user_id"]);
 $stmt->execute();
 
-$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$products = $stmt->fetch(PDO::FETCH_ASSOC)["products"];
+$products = $products === "" || $products === null ? array() : explode(",", $products);
 
 if (isset($_POST["productkeuze"])) {
-  $itemArray = array(
-    'item' => $_POST["productkeuze"]
-  );
   if(!empty($products)) {
-    $list = array_merge($products, array($itemArray));
+    $list = array_merge($products, array($_POST["productkeuze"]));
   } else {
-    $list = array($itemArray);
+    $list = array($_POST["productkeuze"]);
   }
-  $sql = "UPDATE users SET products = ? WHERE id = ?";
+  $sql = "UPDATE users SET products = :p WHERE id = :id";
   $stmt = $dbh->prepare($sql);
-  $stmt->bindParam("1", serialize($list));
-  $stmt->bindParam("2", $_SESSION["user_id"]);
+  $stmt->bindParam("p", implode($list, ","));
+  $stmt->bindParam("id", $_SESSION["user_id"]);
   $stmt->execute();
+
 }
 
 ?>
