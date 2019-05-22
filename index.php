@@ -50,14 +50,6 @@ if (isset($_POST["productkeuze"])) {
   $stmt->execute();
 }
 
-if(isset($_POST['budget'])){
-    $sql = "UPDATE users SET budget = ? WHERE id = ?";
-    $stmt = $dbh->prepare($sql);
-    $stmt->bindParam("1", $_POST['budget']);
-    $stmt->bindParam("2", $_SESSION["user_id"]);
-    $stmt->execute();
-}
-
 ?>
 
 
@@ -94,7 +86,7 @@ if(isset($_POST['budget'])){
             <a href="#"><img src="img/usr/user.png" class="user_pic"></a>
             <div class="dropdown-content">
               <a href="profile.php">Persoonlijke informatie</a>
-              <a href="forgotpassword.php">Wachtwoord veranderen</a><br>
+              <a href="forgotpassword.php">Wachtwoord veranderen</a>
               <a href="logout.php">Log uit</a>
             </div>
           </div>
@@ -141,7 +133,7 @@ if(isset($_POST['budget'])){
 
     <form class="budget" action="connect.php" method="post">
       <h2>Vul hier je maximale budget in</h2>
-      <input type="number" min="0" max="1000" name="budget">
+      <input type="number" min="0" max="1000" name="budget" placeholder="0,00">
       <input type="submit">
     </form>
 

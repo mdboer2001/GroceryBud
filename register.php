@@ -41,7 +41,6 @@ if ($_POST) {
                 <!--Bericht-->
                 <input type="submit" class="bttn" id="buttn" value="Maak je account aan.">
                 <br>
-                <a href="forgotusername.php">Gebruikersnaam vergeten?</a><br>
                 <a href="forgotpassword.php">Wachtwoord vergeten?</a><br><br>
                 <a href="login.php" class="register">Heb je al een account? Log hier in.</a>
             </body>
