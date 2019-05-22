@@ -78,6 +78,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <option value="jumbo">Jumbo</option>
         <option value="hvliet">Hoogvliet</option>
       </select>
+    </form>
     <form method="post">
       <select class="productkeuze search-select" name="productkeuze">
       <option value="" hidden>Kies je product</option>
