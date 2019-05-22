@@ -50,6 +50,14 @@ if (isset($_POST["productkeuze"])) {
   $stmt->execute();
 }
 
+if(isset($_POST['budget'])){
+    $sql = "UPDATE users SET budget = ? WHERE id = ?";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam("1", $_POST['budget']);
+    $stmt->bindParam("2", $_SESSION["user_id"]);
+    $stmt->execute();
+}
+
 ?>
 
 
