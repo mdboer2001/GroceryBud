@@ -32,10 +32,28 @@ $stmt = $dbh->prepare($sql);
 $stmt->bindParam("1", $_SESSION["user_id"]);
 $stmt->execute();
 
-$products = $stmt->fetch(PDO::FETCH_ASSOC);
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($_POST["productkeuze"])) {
-  
+  $itemArray = array(
+    'item' => $_POST["productkeuze"]
+  );
+  if(!empty($products)) {
+    $list = array_merge($products, array($itemArray));
+    $sql = "UPDATE users SET products = ? WHERE id = ?";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam("1", serialize($list));
+    $stmt->bindParam("2", $_SESSION["user_id"]);
+    $stmt->execute();
+  } else {
+    $list = array($itemArray);
+    $sql = "UPDATE users SET products = ? WHERE id = ?";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam("1", serialize($list));
+    $stmt->bindParam("2", $_SESSION["user_id"]);
+    $stmt->execute();
+  }
+
 }
 
 ?>
@@ -91,7 +109,7 @@ if (isset($_POST["productkeuze"])) {
       </select>
     </form>
     <form method="post">
-      <select class="productkeuze search-select" name="productkeuze">
+      <select class="productkeuze search-select" name="productkeuze" onchange="this.form.submit()">
       <option value="" hidden>Kies je product</option>
       <?php
         $sql = "SELECT * FROM ".$winkel.";";
