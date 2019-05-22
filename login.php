@@ -15,6 +15,7 @@ if(isset($_POST["email"])) {
 if (isset($_POST["pass"])) {
   if (password_verify($_POST["pass"], $user["password"])) {
     $_SESSION["user"] = $user["user_naam"];
+    $_SESSION["user_id"] = $user["id"];
     $_SESSION["loggedin"] = true;
     header("location: index.php");
   }
