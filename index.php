@@ -70,7 +70,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       </div>
     </nav>
     <div class="row">
-    <div class="col">
+    <div id="winkel" class="col">
       <form class="winkel" method="post">
       <select class="winkelkeuze search-select" name="winkelkeuze" onchange="this.form.submit();">
         <option value="" hidden>Kies uw Supermarkt</option>
