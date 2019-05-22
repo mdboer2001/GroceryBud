@@ -12,6 +12,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   $stmt = $dbh->prepare($sql);
   $stmt->execute([$user_id]);
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  if(isset($_POST["naam"]) && isset($_POST["email"])){
+    $sql = "UPDATE users SET user_naam = ?, email = ? WHERE id = ?";
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute(array($_POST["naam"],$_POST["email"],$user_id));
+  }
 ?>
 
 <!DOCTYPE html>
@@ -29,29 +35,34 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       </div>
 
       <div class="container">
-        <table>
-          <tr>
-            <th><h2>Profiel</h2></th>
-          </tr>
-          <t>
-            <th>Naam</th>
-            <th>E-mail</th>
-          </t>
-          <?php
-
-          ?>
+        <form class="profielacc" method="post">
+          <legend>
+            <table>
+              <div class="acc_pic"></div>
             <tr>
-              <td><?php echo $user["user_name"]; ?></td>
-              <td><?php echo $user["email"]; ?></td>
+              <th><h2>Profiel</h2></th>
             </tr>
-          <?php
-          ?>
-        </table>
+            <t>
+              <th>Naam</th>
+              <th>E-mail</th>
+            </t>
+            <?php
+
+            ?>
+              <tr>
+                <td><input type="text" name="naam" value="<?php echo $user["user_naam"]; ?>"></input></td>
+                <td><input type="text" name="email" value="<?php echo $user["email"]; ?>"></input></td>
+                <td><input type="submit" value="verander"></input></td>
+              </tr>
+            <?php
+            ?>
+          </table>
+        </legend>
+        </form>
         <div class="row">
-          <div class="col-8"></div>
-              <div class="col">
-                <a class="terug" href="index.php">Terug</a>
-              </div>
+          <div class="col">
+            <a class="terug" href="index.php">Terug</a>
+          </div>
         </div>
 
       </div>
