@@ -40,20 +40,14 @@ if (isset($_POST["productkeuze"])) {
   );
   if(!empty($products)) {
     $list = array_merge($products, array($itemArray));
-    $sql = "UPDATE users SET products = ? WHERE id = ?";
-    $stmt = $dbh->prepare($sql);
-    $stmt->bindParam("1", serialize($list));
-    $stmt->bindParam("2", $_SESSION["user_id"]);
-    $stmt->execute();
   } else {
     $list = array($itemArray);
-    $sql = "UPDATE users SET products = ? WHERE id = ?";
-    $stmt = $dbh->prepare($sql);
-    $stmt->bindParam("1", serialize($list));
-    $stmt->bindParam("2", $_SESSION["user_id"]);
-    $stmt->execute();
   }
-
+  $sql = "UPDATE users SET products = ? WHERE id = ?";
+  $stmt = $dbh->prepare($sql);
+  $stmt->bindParam("1", serialize($list));
+  $stmt->bindParam("2", $_SESSION["user_id"]);
+  $stmt->execute();
 }
 
 if(isset($_POST['budget'])){
@@ -65,6 +59,7 @@ if(isset($_POST['budget'])){
 }
 
 ?>
+
 
 
 <!DOCTYPE html>
@@ -95,7 +90,6 @@ if(isset($_POST['budget'])){
         <form class="form-inline my-2 my-lg-0">
           <?php if(isset($username)) { echo "Welkom " , $username; }else{ echo "Klant";} ?>
 
-          <?php/* if(isset($username)) { echo $username; }else{ echo "Klant";} */?>
           <div class="dropdown">
             <a href="#"><img src="img/usr/user.png" class="user_pic"></a>
             <div class="dropdown-content">
@@ -126,7 +120,7 @@ if(isset($_POST['budget'])){
 
         $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($product as $row) {
-          echo "<option value='".$winkel."-".$row['id']."'>".$row["pr_naam"]."</option>";
+          echo "<option value='".$winkel."-".$row['pr_id']."'>".$row["pr_naam"]."</option>";
         }
        ?>
       </select>
@@ -146,7 +140,7 @@ if(isset($_POST['budget'])){
     </div>
 
     <form class="budget" action="connect.php" method="post">
-      <h2>Vul hier je budget in</h2>
+      <h2>Vul hier je maximale budget in</h2>
       <input type="number" min="0" max="1000" name="budget">
       <input type="submit">
     </form>

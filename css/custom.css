@@ -204,6 +204,9 @@ a:hover{
       position: absolute;
       top: 15%;
   }
+  .profile input{
+      padding: 52px;
+  }
   .acc_pic{
       position: absolute;
       top: 12%;
@@ -236,11 +239,12 @@ a:hover{
   }
 .winkelkeuze{
     position: absolute;
-    width: auto;
+    width: 200px;
   }
 .productkeuze{
     position: absolute;
     margin-top: 1.7%;
+    width: 200px;
   }
 .winkelmandje{
     height: 500px;
@@ -268,4 +272,9 @@ a:hover{
 #winkel{
   margin-left: 5%;
   margin-top: 2%;
+}
+.budget{
+  position: absolute;
+  top: 500px;
+  left: 5%;
 }

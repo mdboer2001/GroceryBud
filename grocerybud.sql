@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 22 mei 2019 om 09:32
+-- Gegenereerd op: 22 mei 2019 om 13:39
 -- Serverversie: 10.1.34-MariaDB
 -- PHP-versie: 5.6.37
 
@@ -34,6 +34,16 @@ CREATE TABLE `hoogvliet` (
   `pr_prijs` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `hoogvliet`
+--
+
+INSERT INTO `hoogvliet` (`pr_id`, `pr_naam`, `pr_prijs`) VALUES
+(1, 'Tijgerbrood', 1.15),
+(2, 'Melk', 0.65),
+(3, 'Tijgerbrood', 1.15),
+(4, 'Melk', 0.65);
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +56,14 @@ CREATE TABLE `jumbo` (
   `pr_prijs` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `jumbo`
+--
+
+INSERT INTO `jumbo` (`pr_id`, `pr_naam`, `pr_prijs`) VALUES
+(1, 'Tijgerbrood', 1.35),
+(2, 'Melk', 0.8);
+
 -- --------------------------------------------------------
 
 --
@@ -57,6 +75,14 @@ CREATE TABLE `lidl` (
   `pr_naam` varchar(255) NOT NULL,
   `pr_prijs` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `lidl`
+--
+
+INSERT INTO `lidl` (`pr_id`, `pr_naam`, `pr_prijs`) VALUES
+(1, 'Tijgerbrood', 1),
+(2, 'Melk', 0.5);
 
 -- --------------------------------------------------------
 
@@ -118,19 +144,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `hoogvliet`
 --
 ALTER TABLE `hoogvliet`
-  MODIFY `pr_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `jumbo`
 --
 ALTER TABLE `jumbo`
-  MODIFY `pr_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `pr_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT voor een tabel `lidl`
 --
 ALTER TABLE `lidl`
-  MODIFY `pr_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `pr_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`
