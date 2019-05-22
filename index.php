@@ -137,9 +137,10 @@ if (isset($_POST["productkeuze"])) {
         </div>
     </div>
 
-    <form class="budget">
+    <form class="budget" action="connect.php" method="post">
       <h2>Vul hier je budget in</h2>
-      <input type="number" min="0" max="1000" name="budget" placeholder>
+      <input type="number" min="0" max="1000" name="budget">
+      <input type="submit">
     </form>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
