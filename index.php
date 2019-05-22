@@ -47,6 +47,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           </div>
       </div>
     </nav>
+    <form class="winkel">
+      <select class="winkelkeuze" name="winkelkeuze">
+        <option value="" hidden>Kies uw Supermarkt</option>
+        <option value="appie">Albert Heijn</option>
+        <option value="lidl">Lidl</option>
+        <option value="Jumbo">Jumbo</option>
+        <option value="Hvliet">Hoogvliet</option>
+      </select>
+      <select class="productkeuze" name="productkeuze">
+        <option value="" hidden>Kies je product</option>
+      </select>
+    </form>
     <div class="row">
     <div class="col"></div>
       <div class="col"></div>
