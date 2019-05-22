@@ -272,3 +272,8 @@ a:hover{
   margin-left: 5%;
   margin-top: 2%;
 }
+.budget{
+  position: absolute;
+  top: 500px;
+  left: 5%;
+}

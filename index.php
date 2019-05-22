@@ -132,7 +132,7 @@ if (isset($_POST["productkeuze"])) {
     </div>
 
     <form class="budget" action="connect.php" method="post">
-      <h2>Vul hier je budget in</h2>
+      <h2>Vul hier je maximale budget in</h2>
       <input type="number" min="0" max="1000" name="budget">
       <input type="submit">
     </form>
