@@ -63,6 +63,7 @@ body{
   background-color: white;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 2px 2px 2px 2px;
   z-index: 1;
   right: 1px;
   height: auto;
@@ -186,7 +187,7 @@ a:hover{
       top: 0;
       left: 0;
       background-color: white;
-      height: 720px;
+      height: 100%;
       width: 100%;
   }
   /* logo in profile.php */
@@ -233,7 +234,7 @@ a:hover{
   }
   .terug{
       position: absolute;
-      top: 600px;
+      top: 750px;
       font-size: 26px;
       color: #77ec3d;
   }
