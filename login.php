@@ -52,7 +52,6 @@ if (isset($_POST["pass"])) {
                 <!--Bericht-->
                 <input type="submit" class="bttn" id="buttn" value="Login">
                 <br>
-                <a href="forgotusername.php">Gebruikersnaam vergeten?</a><br>
                 <a href="forgotpassword.php">Wachtwoord vergeten?</a><br><br>
                 <a href="register.php" class="register">Nog geen account? Meld je hier aan.</a>
             </div>

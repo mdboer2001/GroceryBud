@@ -204,6 +204,9 @@ a:hover{
       position: absolute;
       top: 15%;
   }
+  .profile input{
+      padding: 52px;
+  }
   .acc_pic{
       position: absolute;
       top: 12%;
