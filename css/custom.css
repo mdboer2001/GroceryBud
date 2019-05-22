@@ -13,8 +13,6 @@ body{
     overflow-x: hidden;
 }
 
-
-+/* Links inside the dropdown */
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -196,45 +194,30 @@ a:hover{
       top: 28px;
       left: 12%;
   }
-  /* form profile.php */
-  #accinfo{
-      border: 1px solid #707070;
+  .profielacc{
       position: absolute;
-      height: 50%;
-      width: 60%;
-      top: 25%;
-      left: 20%;
+      top: 200px;
+      border: 1px solid black;
+      padding: 100px;
   }
-  #accinfo legend{
-      font-size: 26px;
-      color: #707070;
+  .profile h2{
       position: absolute;
-      left: 3%;
-      top: 5%;
+      top: 15%;
   }
-  .accdata{
-      position: relative;
-      background-color: white;
-      border-bottom: 1px solid #707070;
-      height: 15%;
-      width: 95%;
-      left: 5%;
-      top: 30%;
-      font-size: 18px;
-  }
-  .profilepic{
+  .acc_pic{
       position: absolute;
-      top: 5%;
+      top: 12%;
       right: 3%;
       height: 60px;
       width: 60px;
       border-radius: 50%;
-      background-color: red;
-      background-image:url(../img/accpic.jpg);
+      background-color: #707070;
+      background-image: url("../img/usr/user.png");
+      background-size: cover;
   }
   .terug{
       position: absolute;
-      top: 750px;
+      top: 500px;
       font-size: 26px;
       color: #77ec3d;
   }
@@ -253,20 +236,18 @@ a:hover{
   }
 .winkelkeuze{
     position: absolute;
-    top: 25%;
-    left: 7%;
+    width: auto;
   }
 .productkeuze{
     position: absolute;
-    top: 30%;
-    left: 7%;
+    margin-top: 1.7%;
   }
 .winkelmandje{
     height: 500px;
     width: 80%;
-    border: 2px solid #707070;
-    border-radius: 0px 0px 10px 10px;
+    border: 1px solid #707070;
     background-color: white;
+    margin-top: 15px;
 }
 .winkelmandje h1{
     text-align: center;
@@ -274,6 +255,7 @@ a:hover{
     font-size: 36px;
     padding: 10px;
     color: #707070;
+    font-weight: normal;
 }
 .winkelproduct{
     position: relative;
@@ -282,4 +264,8 @@ a:hover{
     width: 70%;
     font-size: 24px;
     border-bottom: 1px solid #707070;
+}
+#winkel{
+  margin-left: 5%;
+  margin-top: 2%;
 }
