@@ -239,13 +239,11 @@ a:hover{
   }
 .winkelkeuze{
     position: absolute;
-    top: 25%;
-    left: 7%;
+    width: auto;
   }
 .productkeuze{
     position: absolute;
-    top: 30%;
-    left: 7%;
+    margin-top: 1.7%;
   }
 .winkelmandje{
     height: 500px;
@@ -269,4 +267,8 @@ a:hover{
     width: 70%;
     font-size: 24px;
     border-bottom: 1px solid #707070;
+}
+#winkel{
+  margin-left: 5%;
+  margin-top: 2%;
 }

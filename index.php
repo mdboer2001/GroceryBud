@@ -27,6 +27,35 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     $winkel = "";
   }
 
+$sql = "SELECT products FROM users WHERE id = ?";
+$stmt = $dbh->prepare($sql);
+$stmt->bindParam("1", $_SESSION["user_id"]);
+$stmt->execute();
+
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if (isset($_POST["productkeuze"])) {
+  $itemArray = array(
+    'item' => $_POST["productkeuze"]
+  );
+  if(!empty($products)) {
+    $list = array_merge($products, array($itemArray));
+    $sql = "UPDATE users SET products = ? WHERE id = ?";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam("1", serialize($list));
+    $stmt->bindParam("2", $_SESSION["user_id"]);
+    $stmt->execute();
+  } else {
+    $list = array($itemArray);
+    $sql = "UPDATE users SET products = ? WHERE id = ?";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam("1", serialize($list));
+    $stmt->bindParam("2", $_SESSION["user_id"]);
+    $stmt->execute();
+  }
+
+}
+
 ?>
 
 
@@ -70,7 +99,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       </div>
     </nav>
     <div class="row">
-    <div class="col">
+    <div id="winkel" class="col">
       <form class="winkel" method="post">
       <select class="winkelkeuze search-select" name="winkelkeuze" onchange="this.form.submit();">
         <option value="" hidden>Kies uw Supermarkt</option>
@@ -78,8 +107,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <option value="jumbo">Jumbo</option>
         <option value="hvliet">Hoogvliet</option>
       </select>
+    </form>
     <form method="post">
-      <select class="productkeuze search-select" name="productkeuze">
+      <select class="productkeuze search-select" name="productkeuze" onchange="this.form.submit()">
       <option value="" hidden>Kies je product</option>
       <?php
         $sql = "SELECT * FROM ".$winkel.";";
@@ -88,7 +118,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
         $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($product as $row) {
-          echo "<option>".$row["pr_naam"]."</option>";
+          echo "<option value='".$winkel."-".$row['id']."'>".$row["pr_naam"]."</option>";
         }
        ?>
       </select>
@@ -107,6 +137,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
     </div>
 
+    <form class="budget" action="connect.php" method="post">
+      <h2>Vul hier je budget in</h2>
+      <input type="number" min="0" max="1000" name="budget">
+      <input type="submit">
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
