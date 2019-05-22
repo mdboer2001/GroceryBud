@@ -137,6 +137,10 @@ if (isset($_POST["productkeuze"])) {
         </div>
     </div>
 
+    <form class="budget">
+      <h2>Vul hier je budget in</h2>
+      <input type="number" min="0" max="1000" name="budget" placeholder>
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
