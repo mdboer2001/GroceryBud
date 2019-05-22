@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 21 mei 2019 om 11:39
--- Serverversie: 10.1.37-MariaDB
--- PHP-versie: 7.2.12
+-- Gegenereerd op: 22 mei 2019 om 09:32
+-- Serverversie: 10.1.34-MariaDB
+-- PHP-versie: 5.6.37
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -61,20 +61,6 @@ CREATE TABLE `lidl` (
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `total_product`
---
-
-CREATE TABLE `total_product` (
-  `product_id` int(10) NOT NULL,
-  `jb_pr_id` int(10) NOT NULL,
-  `ldl_pr_id` int(10) NOT NULL,
-  `hg_pr_id` int(10) NOT NULL,
-  `user_id` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Tabelstructuur voor tabel `users`
 --
 
@@ -82,8 +68,18 @@ CREATE TABLE `users` (
   `id` int(10) NOT NULL,
   `user_naam` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `budget` float NOT NULL,
+  `products` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `users`
+--
+
+INSERT INTO `users` (`id`, `user_naam`, `password`, `email`, `budget`, `products`) VALUES
+(5, 'demo', '$2y$10$o792YnZO2sRAo4cSatzPBuwHDPfOpo9t4.BxI3spNXxx1oYA1tzN2', 'mikedeboer2001@hotmail.com', 0, ''),
+(6, 'demo', '$2y$10$USbK/Uvp/KCkr/Uf27RFUekcXdbvG3N24p8ijqs2xwp3gfpptSUwS', 'demo@demo.nl', 0, '');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -108,16 +104,11 @@ ALTER TABLE `lidl`
   ADD PRIMARY KEY (`pr_id`);
 
 --
--- Indexen voor tabel `total_product`
---
-ALTER TABLE `total_product`
-  ADD PRIMARY KEY (`product_id`,`jb_pr_id`,`ldl_pr_id`,`hg_pr_id`);
-
---
 -- Indexen voor tabel `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
@@ -142,16 +133,10 @@ ALTER TABLE `lidl`
   MODIFY `pr_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT voor een tabel `total_product`
---
-ALTER TABLE `total_product`
-  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
