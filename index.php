@@ -183,7 +183,7 @@ $budget = $stmt->fetch(PDO::FETCH_ASSOC);
       case "jumbo":
         echo "<script>document.getElementById('jumb_opt').setAttribute('selected', true);</script>";
         break;
-      case "hvliet":
+      case "hoogvliet":
         echo "<script>document.getElementById('hvlt_opt').setAttribute('selected', true);</script>";
         break;
     }}
