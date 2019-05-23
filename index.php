@@ -32,22 +32,21 @@ $stmt = $dbh->prepare($sql);
 $stmt->bindParam("1", $_SESSION["user_id"]);
 $stmt->execute();
 
-$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$products = $stmt->fetch(PDO::FETCH_ASSOC)["products"];
+$products = $products === "" || $products === null ? array() : explode(",", $products);
 
 if (isset($_POST["productkeuze"])) {
-  $itemArray = array(
-    'item' => $_POST["productkeuze"]
-  );
   if(!empty($products)) {
-    $list = array_merge($products, array($itemArray));
+    $list = array_merge($products, array($_POST["productkeuze"]));
   } else {
-    $list = array($itemArray);
+    $list = array($_POST["productkeuze"]);
   }
-  $sql = "UPDATE users SET products = ? WHERE id = ?";
+  $sql = "UPDATE users SET products = :p WHERE id = :id";
   $stmt = $dbh->prepare($sql);
-  $stmt->bindParam("1", serialize($list));
-  $stmt->bindParam("2", $_SESSION["user_id"]);
+  $stmt->bindParam("p", implode($list, ","));
+  $stmt->bindParam("id", $_SESSION["user_id"]);
   $stmt->execute();
+
 }
 
 ?>
@@ -58,6 +57,8 @@ if (isset($_POST["productkeuze"])) {
  <html>
   <head>
     <meta charset="utf-8">
+    <title>Dashboard - Grocerybud</title>
+    <link rel="shortcut icon" href="img/logo.png"/>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/custom.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
@@ -95,7 +96,7 @@ if (isset($_POST["productkeuze"])) {
     <div class="row">
     <div id="winkel" class="col">
       <form class="winkel" method="post">
-      <select class="winkelkeuze search-select" name="winkelkeuze" onchange="this.form.submit();">
+      <select class="winkelkeuze search-select" id="selectwinkel" name="winkelkeuze" onchange="this.form.submit();">
         <option value="" hidden>Kies uw Supermarkt</option>
         <option value="lidl">Lidl</option>
         <option value="jumbo">Jumbo</option>
