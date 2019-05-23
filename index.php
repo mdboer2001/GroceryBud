@@ -43,17 +43,25 @@ if (isset($_POST["productkeuze"])) {
   }
   $sql = "UPDATE users SET products = :p WHERE id = :id";
   $stmt = $dbh->prepare($sql);
-  $stmt->bindParam("p", implode($list, ","));
+  $list = implode($list, ",");
+  $stmt->bindParam("p", $list);
+  $stmt->bindParam("id", $_SESSION["user_id"]);
+  if($stmt->execute()) {
+    header("Location: index.php");
+  }
+
+}
+
+if(isset($_POST["budget"])) {
+  $sql = "UPDATE users SET budget = :b WHERE id = :id";
+  $stmt = $dbh->prepare($sql);
+  $stmt->bindParam("b", $_POST["budget"]);
   $stmt->bindParam("id", $_SESSION["user_id"]);
   $stmt->execute();
-
 }
 
 ?>
 
-
-
-<!DOCTYPE html>
  <html>
   <head>
     <meta charset="utf-8">
@@ -102,13 +110,13 @@ if (isset($_POST["productkeuze"])) {
       </select>
     </form>
     <form method="post">
-      <select class="productkeuze search-select" name="productkeuze" onchange="this.form.submit()">
+      <select class="productkeuze search-select" name="productkeuze" onchange="this.form.submit();">
       <option value="" hidden>Kies je product</option>
       <?php
-        $sql = "SELECT * FROM ".$winkel.";";
-        $stmt = $dbh->prepare($sql);
+      if(!empty($winkel)){
+        $stmt = $dbh->prepare("SELECT * FROM " . $winkel);
         $stmt->execute();
-
+      }
         $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($product as $row) {
           echo "<option value='".$winkel."-".$row['pr_id']."'>".$row["pr_naam"]."</option>";
@@ -121,16 +129,28 @@ if (isset($_POST["productkeuze"])) {
         <div class="col">
           <div class="winkelmandje">
             <h1>Boodschappenlijstje</h1>
-              <div class="winkelproduct"></div>
-              <div class="winkelproduct"></div>
-              <div class="winkelproduct"></div>
-              <div class="winkelproduct"></div>
-              <div class="winkelproduct"></div>
+              <table>
+                <tr><th>Winkel</th><th>Product</th><th>Prijs</th></tr>
+              <?php
+              foreach($products as $combined) {
+                $last_space = strrpos($combined, '-');
+                $itemId = substr($combined, $last_space);
+                $itemId = ltrim($itemId, '-');
+                $store = substr($combined, 0, $last_space);
+                $sql = "SELECT * FROM ".$store." WHERE pr_id = :id;";
+                $stmt = $dbh->prepare($sql);
+                $stmt->bindParam("id", $itemId);
+                $stmt->execute();
+                $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                echo "<tr><td>".$store."</td><td>".$product[0]["pr_naam"]."</td><td>&euro;".$product[0]["pr_prijs"]."</td></tr>";
+              }
+              ?>
+            </table>
           </div>
         </div>
     </div>
 
-    <form class="budget" action="connect.php" method="post">
+    <form class="budget" method="post">
       <h2>Vul hier je maximale budget in</h2>
       <input type="number" min="0" max="1000" name="budget" placeholder="0,00">
       <input type="submit">
