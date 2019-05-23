@@ -51,7 +51,6 @@ body{
   position: relative;
   display: inline-block;
   text-align: center;
-
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -176,9 +175,8 @@ a:hover{
   }
 
   .logo{
-      margin-left: 12%;
+      margin-left: 9%;
   }
-
   /* de div van profile.php */
   .profile{
       position: absolute;
@@ -252,6 +250,11 @@ a:hover{
     border: 1px solid #707070;
     background-color: white;
     margin-top: 15px;
+    overflow-y: scroll;
+}
+.winkelmandje th{
+    width: 38%;
+    border-bottom: 1px solid #707070;
 }
 .winkelmandje h1{
     text-align: center;
@@ -261,9 +264,12 @@ a:hover{
     color: #707070;
     font-weight: normal;
 }
+.winkelmandje td{
+    padding: 2px;
+}
 .winkelmandje table{
     width: 80%;
-    margin-left: 10%;
+    margin-left: 15%;
     border-bottom: 1px solid #707070;
 }
 .winkelproduct{
