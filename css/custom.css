@@ -20,6 +20,9 @@ body{
   display: block;
   right: 10%;
 }
+.dropdown-content a:hover{
+  background-color: rgb(240,240,240);
+}
 
 /* Change color of dropdown links on hover */
 
