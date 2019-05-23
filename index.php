@@ -139,6 +139,7 @@ $budget = $stmt->fetch(PDO::FETCH_ASSOC);
               <table>
                 <tr><th>Winkel</th><th>Product</th><th>Prijs</th></tr>
               <?php
+              $tot_prijs = 0;
               foreach($products as $combined) {
                 $last_space = strrpos($combined, '-');
                 $itemId = substr($combined, $last_space);
@@ -149,10 +150,12 @@ $budget = $stmt->fetch(PDO::FETCH_ASSOC);
                 $stmt->bindParam("id", $itemId);
                 $stmt->execute();
                 $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                echo "<tr><td>".$store."</td><td>".$product[0]["pr_naam"]."</td><td>&euro;".$product[0]["pr_prijs"]."</td></tr>";
+                echo "<tr><td>".$store."</td><td>".$product[0]["pr_naam"]."</td><td>&euro;".number_format($product[0]["pr_prijs"], 2, '.', ',')."</td></tr>";
+                $tot_prijs += $product[0]["pr_prijs"];
               }
               ?>
-              <tr><th>Budget: &euro;<?php echo $budget["budget"]; ?></th><th colspan="2"></th></tr>
+              <tr><td colspan="3">&nbsp;</td></tr>
+              <tr><th>Budget: &euro;<?php echo $budget["budget"]; ?></th><th colspan="2">Prijs: &euro;<?php echo number_format($tot_prijs, 2, '.', ',') ?></th></tr>
             </table>
           </div>
         </div>
