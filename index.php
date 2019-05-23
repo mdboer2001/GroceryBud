@@ -47,7 +47,7 @@ if (isset($_POST["productkeuze"])) {
   $stmt->bindParam("p", $list);
   $stmt->bindParam("id", $_SESSION["user_id"]);
   if($stmt->execute()) {
-    header("Location: index.php");
+    header("Location: index.php?winkelkeuze=".$winkel);
   }
 
 }
@@ -59,6 +59,11 @@ if(isset($_POST["budget"])) {
   $stmt->bindParam("id", $_SESSION["user_id"]);
   $stmt->execute();
 }
+
+$stmt = $dbh->prepare("SELECT budget FROM users WHERE id = :id");
+$stmt->bindParam("id", $_SESSION["user_id"]);
+$stmt->execute();
+$budget = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -106,9 +111,9 @@ if(isset($_POST["budget"])) {
       <form class="winkel" method="post">
       <select class="winkelkeuze search-select" id="selectwinkel" name="winkelkeuze" onchange="this.form.submit();">
         <option value="" hidden>Kies uw Supermarkt</option>
-        <option value="lidl">Lidl</option>
-        <option value="jumbo">Jumbo</option>
-        <option value="hvliet">Hoogvliet</option>
+        <option value="lidl" id="lidl_opt">Lidl</option>
+        <option value="jumbo" id="jumb_opt">Jumbo</option>
+        <option value="hvliet" id="hvlt_opt">Hoogvliet</option>
       </select>
     </form>
     <form method="post">
@@ -134,6 +139,7 @@ if(isset($_POST["budget"])) {
               <table>
                 <tr><th>Winkel</th><th>Product</th><th>Prijs</th></tr>
               <?php
+              $tot_prijs = 0;
               foreach($products as $combined) {
                 $last_space = strrpos($combined, '-');
                 $itemId = substr($combined, $last_space);
@@ -144,9 +150,12 @@ if(isset($_POST["budget"])) {
                 $stmt->bindParam("id", $itemId);
                 $stmt->execute();
                 $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                echo "<tr><td>".$store."</td><td>".$product[0]["pr_naam"]."</td><td>&euro;".$product[0]["pr_prijs"]."</td></tr>";
+                echo "<tr><td>".$store."</td><td>".$product[0]["pr_naam"]."</td><td>&euro;".number_format($product[0]["pr_prijs"], 2, '.', ',')."</td></tr>";
+                $tot_prijs += $product[0]["pr_prijs"];
               }
               ?>
+              <tr><td colspan="3">&nbsp;</td></tr>
+              <tr><th>Budget: &euro;<?php echo $budget["budget"]; ?></th><th colspan="2">Prijs: &euro;<?php echo number_format($tot_prijs, 2, '.', ',') ?></th></tr>
             </table>
           </div>
         </div>
@@ -165,5 +174,19 @@ if(isset($_POST["budget"])) {
     $('.search-select').select2();
 });
     </script>
+    <?php
+    if(!empty($winkel)){
+    switch ($winkel) {
+      case "lidl":
+        echo "<script>document.getElementById('lidl_opt').setAttribute('selected', true);</script>";
+        break;
+      case "jumbo":
+        echo "<script>document.getElementById('jumb_opt').setAttribute('selected', true);</script>";
+        break;
+      case "hoogvliet":
+        echo "<script>document.getElementById('hvlt_opt').setAttribute('selected', true);</script>";
+        break;
+    }}
+    ?>
   </body>
  </html>
