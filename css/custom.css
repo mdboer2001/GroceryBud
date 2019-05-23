@@ -205,7 +205,7 @@ a:hover{
       top: 15%;
   }
   .profile input{
-      padding: 52px;
+      padding: 20px;
   }
   .acc_pic{
       position: absolute;
@@ -220,7 +220,7 @@ a:hover{
   }
   .terug{
       position: absolute;
-      top: 500px;
+      top: 550px;
       font-size: 26px;
       color: #77ec3d;
   }
