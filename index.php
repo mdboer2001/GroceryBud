@@ -47,7 +47,7 @@ if (isset($_POST["productkeuze"])) {
   $stmt->bindParam("p", $list);
   $stmt->bindParam("id", $_SESSION["user_id"]);
   if($stmt->execute()) {
-    header("Location: index.php?winkelkeuze=".$winkel);
+    header("Location: index.php?winkelkeuze=".$_GET["winkelkeuze"]);
   }
 
 }
