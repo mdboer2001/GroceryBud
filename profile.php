@@ -24,6 +24,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <title>Profiel - Grocerybud</title>
+    <link rel="shortcut icon" href="img/logo.png"/>
     <link href="css/custom.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <title>My GroceryBud profile</title>
